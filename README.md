@@ -6,7 +6,7 @@ AusTraits_Analysis
 > `"It synthesises data on nearly 500 traits across more than 30,000 taxa from field campaigns, published literature, taxonomic monographs, and individual taxon descriptions."`
 >
 > It was found the data samples do not conform well to ML:
-> * Sample values for traits are typically aggregated, rather than raw samples. E.g. mean, mde, maximum, minimum
+> * Sample values for traits are typically aggregated, rather than raw samples. E.g. mean, mode, maximum, minimum
 >   * This also results in there being limited samples per taxon.
 > * Sample values are inconsistent between taxons; there are many samples in total, but there are also many taxons and many features:
 >   * There are many features but taxons don't have values for every feature, even for a subset of the more common features.
