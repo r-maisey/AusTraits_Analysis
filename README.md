@@ -4,11 +4,19 @@ AusTraits_Analysis
 > 
 > The main website for [AusTraits](https://austraits.org/) provides up to date information on the database and access methods via Zenodo, R interface and an API:
 > `"It synthesises data on nearly 500 traits across more than 30,000 taxa from field campaigns, published literature, taxonomic monographs, and individual taxon descriptions."`
+>
+> It was found the data samples do not conform well to ML:
+> * Sample values for traits are typically aggregated, rather than raw samples. E.g. mean, mde, maximum, minimum
+>   * This also results in there being limited samples per taxon.
+> * Sample values are inconsistent between taxons; there are many samples in total, but there are also many taxons and many features:
+>   * There are many features but taxons don't have values for every feature, even for a subset of the more common features.
+>   * Rolling up taxons to the genus level still results in inconsistency in data, furthermore, the features will be different for different species/subspecies/forms/etc. as this is what separates them in the first place.
+>   * A test subset will not contain features not represented in the training data set and vice-versa, for any given taxon.
+>  
+> Unfortuantely, this data is not suited to provide a model to solve the problem statement. The data could be suitable if it were the raw data and data sources were consistent with data collection.
 
 # 1. Problem Statement
-Develop machine learning algorithm to identify local native plant species using easily measurable traits. "Local" to be defined, but approximately indicated here, within the orange border:
-
-![Extended South West of Western Australia](Local_Species_Region.png "Region - Local Species")
+Develop machine learning algorithm to identify native plant species using easily measurable traits.
 
 # 2. Methodology
 
@@ -22,8 +30,7 @@ Develop machine learning algorithm to identify local native plant species using 
 ## 2.3 EDA, Clean data, Tranform Data
 * Determine how to perform EDA given the large dataset size.
     * Identify useful features.
-    * Determine how to read in data while retaining only useful features and useful records.
-    * Initial transformation of any data not in a convenient format for Pandas DataFrane(s).
+    * Initial transformation of any data not in a convenient format for Pandas DataFrame(s).
     * Formalize process as a function for reproduceability.
 * Perform general EDA.
 * Perform full data cleaning using a Pipeline().
