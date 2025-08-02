@@ -29,9 +29,10 @@ Develop machine learning algorithm to identify native plant species using easily
 
 ## 2.3 EDA, Clean data, Tranform Data
 * Determine how to perform EDA given the large dataset size.
-    * Identify useful features.
-    * Initial transformation of any data not in a convenient format for Pandas DataFrame(s).
-    * Formalize process as a function for reproduceability.
+  * Performed in Jupyter Notebook.
+  * Identify useful features.
+  * Initial transformation of any data not in a convenient format for Pandas DataFrame(s).
+  * Formalize process as a function for reproduceability.
 * Perform general EDA.
 * Perform full data cleaning using a Pipeline().
 * Determine how to best clean the data using a Transform.
